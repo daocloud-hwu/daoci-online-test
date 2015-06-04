@@ -14,7 +14,7 @@ install:
   - echo ${MYENV}
   - echo this is a install line
   - echo make sure git should be installed in base image, if you customize you base image
-  - apt-get install git-core
+  - apt-get install git-core -y
 
 before_script:
   - echo ${MYENV}
