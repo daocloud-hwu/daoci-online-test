@@ -1,0 +1,49 @@
+# This is a comment line
+
+image: ubuntu:14.04
+
+services:
+  - mysql
+  - redis
+  - mongodb
+
+env:
+  - MYENV=xyz
+
+install:
+  - echo ${MYENV}
+  - echo this is a install line
+
+before_script:
+  - echo ${MYENV}
+  - echo this is a before script line
+
+script:
+  - echo ${MYENV}
+  - echo this is a script line
+  - echo ""
+  - echo "Ping service hosts ..."
+  - ping -c 2 mysql
+  - ping -c 2 redis
+  - ping -c 2 mongodb
+  - echo ""
+  - echo "Get mysql env ..."
+  - echo "MYSQL_PORT                = ${MYSQL_PORT}"
+  - echo "MYSQL_PORT_3306_TCP_ADDR  = ${MYSQL_PORT_3306_TCP_ADDR}""
+  - echo "MYSQL_PORT_3306_TCP       = ${MYSQL_PORT_3306_TCP}""
+  - echo "MYSQL_PORT_3306_TCP_PROTO = ${MYSQL_PORT_3306_TCP_PROTO}"
+  - echo "MYSQL_PORT_3306_TCP_PORT  = ${MYSQL_PORT_3306_TCP_PORT}"
+  - echo ""
+  - echo "Get redis env ..."
+  - echo "REDIS_PORT                = ${REDIS_PORT}"
+  - echo "REDIS_PORT_6379_TCP_ADDR  = ${REDIS_PORT_6379_TCP_ADDR}"
+  - echo "REDIS_PORT_6379_TCP       = ${REDIS_PORT_6379_TCP}"
+  - echo "REDIS_PORT_6379_TCP_PROTO = ${REDIS_PORT_6379_TCP_PROTO}"
+  - echo "REDIS_PORT_6379_TCP_PORT  = ${REDIS_PORT_6379_TCP_PORT}"
+  - echo ""
+  - echo "Get mongodb env ..."
+  - echo "MONGODB_PORT                 = ${MONGODB_PORT}"
+  - echo "MONGODB_PORT_27017_TCP_ADDR  = ${MONGODB_PORT_27017_TCP_ADDR}"
+  - echo "MONGODB_PORT_27017_TCP       = ${MONGODB_PORT_27017_TCP}"
+  - echo "MONGODB_PORT_27017_TCP_PROTO = ${MONGODB_PORT_27017_TCP_PROTO}"
+  - echo "MONGODB_PORT_27017_TCP_PORT  = ${MONGODB_PORT_27017_TCP_PORT}"
