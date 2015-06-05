@@ -30,6 +30,7 @@ script:
   - ping -c 2 mongodb
   - echo ""
   - echo "Get mysql env ..."
+  - echo "MYSQL_INSTANCE_NAME       = ${MYSQL_INSTANCE_NAME}"
   - echo "MYSQL_PORT                = ${MYSQL_PORT}"
   - echo "MYSQL_PORT_3306_TCP_ADDR  = ${MYSQL_PORT_3306_TCP_ADDR}"
   - echo "MYSQL_PORT_3306_TCP       = ${MYSQL_PORT_3306_TCP}"
