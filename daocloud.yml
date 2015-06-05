@@ -29,6 +29,8 @@ script:
   - ping -c 2 redis
   - ping -c 2 mongodb
   - echo ""
+  - env
+  - echo ""
   - echo "Get mysql env ..."
   - echo "MYSQL_INSTANCE_NAME       = ${MYSQL_INSTANCE_NAME}"
   - echo "MYSQL_PORT                = ${MYSQL_PORT}"
