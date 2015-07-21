@@ -21,6 +21,7 @@ before_script:
 script:
   - echo ${MYENV}
   - echo this is a script line
+  - ls /not-exist
   - echo ""
   - echo "Ping service hosts ..."
   - ping -c 2 mysql
