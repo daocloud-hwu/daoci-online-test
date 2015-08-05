@@ -13,7 +13,8 @@ env:
 install:
   - echo ${MYENV}
   - echo this is a install line
-  - apt-get install git-core
+  - echo make sure git should be installed in base image, if you customize you base image
+  - apt-get install git-core -y
 
 before_script:
   - echo ${MYENV}
@@ -28,10 +29,13 @@ script:
   - ping -c 2 redis
   - ping -c 2 mongodb
   - echo ""
+  - env
+  - echo ""
   - echo "Get mysql env ..."
+  - echo "MYSQL_INSTANCE_NAME       = ${MYSQL_INSTANCE_NAME}"
   - echo "MYSQL_PORT                = ${MYSQL_PORT}"
-  - echo "MYSQL_PORT_3306_TCP_ADDR  = ${MYSQL_PORT_3306_TCP_ADDR}""
-  - echo "MYSQL_PORT_3306_TCP       = ${MYSQL_PORT_3306_TCP}""
+  - echo "MYSQL_PORT_3306_TCP_ADDR  = ${MYSQL_PORT_3306_TCP_ADDR}"
+  - echo "MYSQL_PORT_3306_TCP       = ${MYSQL_PORT_3306_TCP}"
   - echo "MYSQL_PORT_3306_TCP_PROTO = ${MYSQL_PORT_3306_TCP_PROTO}"
   - echo "MYSQL_PORT_3306_TCP_PORT  = ${MYSQL_PORT_3306_TCP_PORT}"
   - echo ""
@@ -48,3 +52,4 @@ script:
   - echo "MONGODB_PORT_27017_TCP       = ${MONGODB_PORT_27017_TCP}"
   - echo "MONGODB_PORT_27017_TCP_PROTO = ${MONGODB_PORT_27017_TCP_PROTO}"
   - echo "MONGODB_PORT_27017_TCP_PORT  = ${MONGODB_PORT_27017_TCP_PORT}"
+
