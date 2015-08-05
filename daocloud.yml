@@ -13,6 +13,7 @@ env:
 install:
   - echo ${MYENV}
   - echo this is a install line
+  - apt-get install git-core
 
 before_script:
   - echo ${MYENV}
