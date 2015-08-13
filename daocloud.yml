@@ -21,7 +21,7 @@ before_script:
   - echo this is a before script line
 
 script:
-  - if [ -z "$qiniu_access_key" ]; then echo 'error: wait for daocloud'; return 1; fi
+  - if [ -z "$qiniu_access_key" ]; then echo 'error wait for daocloud'; return 1; fi
   - echo ${MYENV}
   - echo this is a script line
   - echo ""
