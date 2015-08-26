@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM daocloud.io/ubuntu:14.04
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
