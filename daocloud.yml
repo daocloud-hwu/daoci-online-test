@@ -22,7 +22,7 @@ before_script:
 
 script:
   - echo ${MYENV}
-  - if [ "a" = "a" ]; then echo xxx; exit 1; fi
+  - if [ "a" = "a" ]; then echo xxx; exit 0; fi
   - echo this is a script line
   - echo ""
   - echo "Ping service hosts ..."
